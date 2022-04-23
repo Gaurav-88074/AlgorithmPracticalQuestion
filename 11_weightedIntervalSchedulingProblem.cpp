@@ -61,9 +61,9 @@ int main(){
     sort(jobs.begin(),jobs.end(),[](job a,job b){
         return a.finish<b.finish;
     });
-    
+    //90
     int res = schedule(jobs);
     cout<<res<<endl;
-    
+
     return 0;
 }
