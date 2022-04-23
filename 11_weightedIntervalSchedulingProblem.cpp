@@ -40,9 +40,9 @@ int schedule(vector<job> jobs){
     
     for (int i = 1; i < jobs.size(); i++){
         int l = binarySearch(jobs,i);
-        int p;
+        int p=jobs[i].profit;
         if (l!=-1){
-            p = total[l]+jobs[i].profit;
+            p+= total[l];
         }
         total[i] = max(p,total[i-1]);
     }
