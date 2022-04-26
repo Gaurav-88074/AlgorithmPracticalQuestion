@@ -44,6 +44,7 @@ int main(){
     
     int** dp = createDp(100,100);
     int result = knapsack(valuePtr,weightPtr,size-1,capacity,dp);
+
     cout<<result<<endl;
 
     return 0;

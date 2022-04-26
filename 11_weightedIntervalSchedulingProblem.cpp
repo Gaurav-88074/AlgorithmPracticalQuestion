@@ -35,6 +35,9 @@ int binarySearch(vector<job> jobs,int index){
     return -1;
 }
 int schedule(vector<job> jobs){
+    sort(jobs.begin(),jobs.end(),[](job a,job b){
+        return a.finish<b.finish;
+    });
     int* total = new int[jobs.size()];
     total[0] = jobs[0].profit;
     
@@ -57,11 +60,7 @@ int main(){
     jobs.push_back(job(3,5,20));
     jobs.push_back(job(6,19,100));
     jobs.push_back(job(2,100,200));
-
-    sort(jobs.begin(),jobs.end(),[](job a,job b){
-        return a.finish<b.finish;
-    });
-    //90
+    
     int res = schedule(jobs);
     cout<<res<<endl;
 

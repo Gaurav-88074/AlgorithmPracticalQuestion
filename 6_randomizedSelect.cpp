@@ -57,12 +57,7 @@ int main(){
     int size = sizeof(arr)/sizeof(int);
     
     displayArray(array,size);
-    int res = kthSmallestElement(array,0,size,1);
-    cout<<res<<endl;
-    displayArray(array,size);
-    res = kthSmallestElement(array,0,size,8);
-    cout<<res<<endl;
-    res = kthSmallestElement(array,0,size,9);
+    int res = kthSmallestElement(array,0,size,5);
     cout<<res<<endl;
 
     return 0;

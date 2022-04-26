@@ -51,7 +51,7 @@ void BFS(Graph &graph,int  source){
         cout<<node<<" ";
         Queue.pop();
         for (int i = 0; i < graph.getSize(); i++){
-            if (graph.isConnected(node,i) && visited[i]==false){
+            if (graph.isConnected(node,i) && !visited[i]){
                 visited[i] = true;
                 Queue.push(i);
             }

@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+//ignore this file
 void displayArray(int* &array,int size){
     cout<<"Displaying Your Array..."<<endl;
     for (int i = 0; i < size; i++){

@@ -39,15 +39,21 @@ class Graph{
             return this->size;
         }
 };
-void DFS(Graph &graph,int  source,bool visited[]){
+void DFS_REC(Graph &graph,int  source,bool visited[]){
     cout<<source<<" ";
     visited[source] = true;
     for (int i = 0; i < graph.getSize(); i++){
-        if (graph.isConnected(source,i)&&visited[i]==false){
+        if (graph.isConnected(source,i)&& !visited[i]){
             visited[i] = true;
-            DFS(graph,i,visited);
+            DFS_REC(graph,i,visited);
         }
     }
+}
+void DFS(Graph &graph,int  source){
+    cout<<"Source : "<<source<<endl;
+    bool visited[graph.getSize()] = {false};
+    DFS_REC(graph,source,visited);
+    cout<<endl<<endl;
 }
 int main(){
     
@@ -62,9 +68,11 @@ int main(){
 
     graph.displayGraph();
 
-    bool visited[graph.getSize()] = {false};
-    cout<<"Source :"<<0<<endl;
-    DFS(graph,0,visited);
+    DFS(graph,0);
+    DFS(graph,1);
+    DFS(graph,2);
+    DFS(graph,3);
+    DFS(graph,4);
     
 
     return 0;
