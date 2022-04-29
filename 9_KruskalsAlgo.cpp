@@ -65,7 +65,7 @@ int MST(vector<edge> &edges){
     int res = 0;
     for (int i = 0; i < edges.size(); i++){
         int source = edges[i].source;
-        int dest = edges[i].dest;
+        int dest   = edges[i].dest;
         if (find(parent,source)!=find(parent,dest)){
             res+=edges[i].weight;
             Union(rank,parent,source,dest);

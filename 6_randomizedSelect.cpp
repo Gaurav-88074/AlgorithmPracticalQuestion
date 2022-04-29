@@ -39,7 +39,7 @@ int kthSmallestElement(int* &array,int start,int end,int k){
     if(start==end){
         return array[start];
     }
-    int pos = partition(array,start,end);
+    int pos = partitionrandom(array,start,end);
     int index = pos-start+1;
     if (index==k){
         return array[pos];
@@ -57,7 +57,8 @@ int main(){
     int size = sizeof(arr)/sizeof(int);
     
     displayArray(array,size);
-    int res = kthSmallestElement(array,0,size,5);
+    int res = kthSmallestElement(array,0,size,1);
+
     cout<<res<<endl;
 
     return 0;
